@@ -1,0 +1,57 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alljobscard {
+    width: 50%;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.alljobscard .first-layer {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    justify-content: space-between;
+    height: 70px;
+    background-color: #cfccd6;
+
+    /* background-color: rgb(236, 236, 236); */
+    padding: 20px;
+
+}
+
+.alljobscard .Experience img {
+    width: 20px;
+}
+
+.alljobscard .second-layer {
+    padding: 20px;
+}
+
+.alljobscard .Experience {
+    display: grid;
+    text-align: left;
+    grid-template-columns: repeat(3, 2fr);
+    padding-bottom: 10px;
+}
+
+.alljobscard .keyskills {
+    text-align: left;
+
+}
+
+.alljobscard .third-layer {
+    border-top:1px solid black ;
+    padding: 5px;
+    background-color: #cfccd6;
+
+    /* background-color: rgb(241, 241, 241); */
+
+}

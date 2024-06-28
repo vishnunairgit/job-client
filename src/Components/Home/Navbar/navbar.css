@@ -1,0 +1,43 @@
+.navbarHome {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-bottom: 1px solid black;
+    color: black;
+    padding: 0.5rem 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-weight: 400;
+    font-size: .9375rem;
+}
+
+.navbarHome .nav-leftside {
+    display: flex;
+    align-items: center;
+}
+
+.navbarHome .nav-leftside img {
+    width: 15%;
+}
+
+.navbarHome .dropdown-jobs {
+    padding-left: 4%;
+}
+
+.navbarHome .dropdown-menu {
+    margin-top: 2% !important;
+
+}
+
+
+
+.navbarHome .nav-rightside {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbarHome .dropdown-user{
+    padding-right: 25px;
+}
