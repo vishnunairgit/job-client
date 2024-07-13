@@ -1,57 +1,79 @@
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  padding: 15px;
+  margin: 15px 0;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s;
 }
 
-.alljobscard {
-    width: 50%;
-    margin: 20px 0;
-    border-radius: 10px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff;
+.container:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.alljobscard .first-layer {
-    display: flex;
-    align-items: center;
-    text-align: left;
-    justify-content: space-between;
-    height: 70px;
-    background-color: #cfccd6;
-
-    /* background-color: rgb(236, 236, 236); */
-    padding: 20px;
-
+/* Main card styling */
+.job-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.alljobscard .Experience img {
-    width: 20px;
+.job-card .header,
+.job-card .details,
+.job-card .footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
 }
 
-.alljobscard .second-layer {
-    padding: 20px;
+.job-card .header-left,
+.job-card .header-right,
+.job-card .active-status,
+.job-card .experience,
+.job-card .skills,
+.job-card .date {
+  display: flex;
+  align-items: center;
+  flex: 1;
 }
 
-.alljobscard .Experience {
-    display: grid;
-    text-align: left;
-    grid-template-columns: repeat(3, 2fr);
-    padding-bottom: 10px;
+.job-card .header-left h6 {
+  margin-left: 5%;
 }
 
-.alljobscard .keyskills {
-    text-align: left;
-
+.job-card .header-right,
+.job-card .active-status {
+  justify-content: center;
 }
 
-.alljobscard .third-layer {
-    border-top:1px solid black ;
-    padding: 5px;
-    background-color: #cfccd6;
+.job-card .experience img {
+  margin-right: 8px;
+  width: 15%;
+}
 
-    /* background-color: rgb(241, 241, 241); */
+.job-card .experience div {
+  margin-right: 20px;
+}
 
+.job-card .footer .date {
+  font-size: 0.9em;
+  color: #757575;
+}
+
+.job-card .active-status button {
+  border: none;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  min-width: 90px;
+}
+
+.job-card .active-status p {
+  margin: 0;
 }
