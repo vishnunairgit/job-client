@@ -3,6 +3,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { getSingleJobs, deleteJob } from '../../../Api/Job'
 import './jobview.css'
 import { calculateTimeAgo, formatDate } from '../../../Helpers/Helpers';
+import loadingGif from '../../Assets/loading...gif';
+
 
 
 function Jobview() {
@@ -33,50 +35,50 @@ function Jobview() {
     }, [jobId])
 
     if (loading) {
-        return <div>Loading...</div>
-    }
+        return (
+            <div className="spinner-container">
+                <img src={loadingGif} alt="Loading..." className="spinner" />
+            </div>
+        );
+    };
+
     if (error) {
         return <div>{error.message};</div>
     }
 
-    const handleBack = ()=>{
+    const handleBack = () => {
         navigate('/Home')
     }
 
-    const handleEdit = ()=>{
+    const handleEdit = () => {
         navigate(`/EditJob/${jobId}`);
     }
 
-    const handleDelete =  async () =>{
+    const handleDelete = async () => {
 
         if (window.confirm('Are you sure you want to delete this job?')) {
             try {
-
                 const response = await deleteJob(jobId);
                 alert(response.message)
                 // alert('Job deleted successfully!');
                 navigate('/Alljobs');
-
             } catch (error) {
                 seterror(error);
                 alert(error.response?.data?.message || 'Error deleting job. Please try again.');
             }
-            
         }
-
     }
     if (loading) {
-        return <div>Loading...</div>;
-    }
+        return (
+            <div className="spinner-container">
+                <img src={loadingGif} alt="Loading..." className="spinner" />
+            </div>
+        );
+    };
 
     if (error) {
         return <div>{error.message}</div>;
     }
-
-    
-
-
-
 
     return (
 
@@ -98,7 +100,7 @@ function Jobview() {
                     </div>
 
                     <div className='Job-First-box'>
-                        
+
                         <div className="jobRow">
                             <div className="jobLabel">
                                 <strong>Location</strong>
@@ -119,6 +121,7 @@ function Jobview() {
                             </div>
                             <div className="">: {job.Experience} years</div>
                         </div>
+
                         <div className="jobRow Applicants "  >
                             <div className="jobLabel">
                                 <strong>No of Applicants</strong>

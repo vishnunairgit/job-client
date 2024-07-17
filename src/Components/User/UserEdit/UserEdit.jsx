@@ -1,103 +1,11 @@
 
-// import React, { useEffect, useState } from 'react'
-// import { Getuser, updateUser } from '../../../Api/User';
-// import '../UserView/user.css'
-// import { useNavigate, useParams } from 'react-router-dom';
-// // import { updateJob } from '../../../Api/Job';
 import { formatDateForInput } from '../../../Helpers/Helpers';
-
-// function UserEdit() {
-//     const { userId } = useParams();
-//     const [user, setUser] = useState(null);
-//     const [userData, setUserData] = useState({});
-//     const [loading, setLoading] = useState(true);
-//     const [errors, setErrors] = useState({});
-
-//     const [userFiles, setuserFiles] = useState({
-//         logoFile: '',
-//         imageFile: '',
-
-//     })
-
-//     const navigate = useNavigate();
-
-//     useEffect(() => {
-//         const fetchUser = async () => {
-//             try {
-//                 const userData = await Getuser(userId);
-//                 setUser(userData);
-//                 setUserData(userData);
-//                 setLoading(false);
-//             } catch (error) {
-//                 setErrors({ fetch: error.message });
-//                 setLoading(false);
-//             }
-//         };
-//         if (userId) {
-//             fetchUser();
-//         } else {
-//             console.warn('No userId found');
-//         }
-//     }, [userId]);
-
-//     if (loading) {
-//         return <div>Loading...</div>;
-//     }
-
-//     if (errors.fetch) {
-//         return <div>Error: {errors.fetch}</div>;
-//     }
-
-//     const handleUserChange = (e) => {
-//         const { name, value } = e.target;
-//         setUserData({ ...userData, [name]: value });
-//     };
-
-//     // file management
-//     const Edituserfile = (e) => {
-//         const file = e.target.files[0];
-//         const fileName = e.target.name;
-//         setuserFiles({ ...userFiles, [fileName]: file })
-//     }
-
-//     const handleeditSave = async (e) => {
-//         e.preventDefault();
-
-//         try {
-//             const formData = new formData();
-//             for (const key in userData) {
-//                 formData.append(key, userData[key])
-//             }
-//             if (userFiles.logoFile) {
-//                 formData.append('logoFile', userFiles.logoFile);
-//             }
-//             if (userFiles.imageFile) {
-//                 formData.append('imageFile', userFiles.imageFile);
-//             }
-
-//             await updateUser(userId, formData);
-//             alert('user updated successfully!');
-//             navigate('/CompanyView')
-//         } catch (error) {
-//             setErrors(error);
-//         }
-//     }
-
-//     const UpdatPassword = () => {
-//         navigate(`/UserEdit/${userId}/Updatepassword `);
-//     }
-
-//     const handleback = () => {
-//         navigate('/UserView')
-//     }
-
-
-
-
 import React, { useEffect, useState } from 'react';
 import { Getuser, updateUser } from '../../../Api/User';
 import '../UserView/user.css';
 import { useNavigate, useParams } from 'react-router-dom';
+import loadingGif from '../../../Components/Assets/loading...gif';
+
 
 function UserEdit() {
     const { userId } = useParams();
@@ -105,6 +13,7 @@ function UserEdit() {
     const [userData, setUserData] = useState({});
     const [loading, setLoading] = useState(true);
     const [errors, setErrors] = useState({});
+
     const [userFiles, setUserFiles] = useState({
         logoFile: '',
         imageFile: '',
@@ -132,8 +41,12 @@ function UserEdit() {
     }, [userId]);
 
     if (loading) {
-        return <div>Loading...</div>;
-    }
+        return (
+            <div className="spinner-container">
+                <img src={loadingGif} alt="Loading..." className="spinner" />
+            </div>
+        );
+    };
 
     if (errors.fetch) {
         return <div>Error: {errors.fetch}</div>;
@@ -434,20 +347,20 @@ function UserEdit() {
                         </div>
 
                         <div className='file-view'>
-                        {userFiles?.logoFile && (
-                            <img
-                                src={URL.createObjectURL(userFiles.logoFile)}
-                                alt="ffffffffffffff"
-                                style={{ width: "100px", height: "100px" }}
-                            />
-                        )}
-                        {userFiles?.imageFile && (
-                            <img
-                                src={URL.createObjectURL(userFiles.imageFile)}
-                                alt="fffffffffffff"
-                                style={{ width: "100px", height: "100px" }}
-                            />
-                        )}
+                            {userFiles?.logoFile && (
+                                <img
+                                    src={URL.createObjectURL(userFiles.logoFile)}
+                                    alt="ffffffffffffff"
+                                    style={{ width: "100px", height: "100px" }}
+                                />
+                            )}
+                            {userFiles?.imageFile && (
+                                <img
+                                    src={URL.createObjectURL(userFiles.imageFile)}
+                                    alt="fffffffffffff"
+                                    style={{ width: "100px", height: "100px" }}
+                                />
+                            )}
 
                         </div>
 

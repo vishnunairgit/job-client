@@ -3,6 +3,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { getSingleJobs, updateJob } from '../../../Api/Job';
 import './editjob.css'
 import { formatDateForInput } from '../../../Helpers/Helpers';
+import loadingGif from '../../Assets/loading...gif';
+
 
 function EditJob() {
 
@@ -47,8 +49,12 @@ function EditJob() {
   };
 
   if (loading) {
-    return <div>Loading...</div>
-  }
+    return (
+        <div className="spinner-container">
+            <img src={loadingGif} alt="Loading..." className="spinner" />
+        </div>
+    );
+};
 
   if (error) {
     return <div>{error.message}</div>

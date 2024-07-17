@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  font-family:Arial, Helvetica, sans-serif
+  font-family: Arial, Helvetica, sans-serif
 }
 
 .App-logo {
@@ -33,6 +33,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -40,10 +41,7 @@
 
 .button_01 {
   padding: 9px 15px 9px 15px;
-  /* min-width: 30px; */
-  
-  min-width: 100px; 
-  /* Minimum width set to 100px */
+  min-width: 100px;
   width: auto;
   border: none;
   background-color: #037afa;
@@ -52,14 +50,14 @@
   cursor: pointer;
   margin: 10px;
 }
+
 .button_01:hover {
   background-color: #0056b3;
 }
 
-
 .button_02 {
   padding: 9px 15px 9px 15px;
-  min-width: 100px; 
+  min-width: 100px;
   width: auto;
   border: none;
   background-color: #277c3a;
@@ -68,13 +66,14 @@
   cursor: pointer;
   margin: 10px;
 }
+
 .button_02:hover {
   background-color: #0c5227;
 }
 
 .button_03 {
   padding: 9px 15px 9px 15px;
-  min-width: 100px; 
+  min-width: 100px;
   width: auto;
   border: none;
   background-color: #e71313;
@@ -83,6 +82,20 @@
   cursor: pointer;
   margin: 10px;
 }
+
 .button_02:hover {
   background-color: #6b0606;
+}
+
+/* loading spinner GIF */
+.spinner-container {
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+  height: 100vh;
+}
+
+.spinner {
+  width: 70px;
+  height: 70px;
 }

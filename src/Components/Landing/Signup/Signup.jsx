@@ -90,6 +90,7 @@ function Signup({ setloginsignup }) {
             Email: signUpForm.Email,
             Phonenumber: signUpForm.Phonenumber,
             password: signUpForm.password,
+            ConfirmPassword: signUpForm.ConfirmPassword,
         };
 
         try {
@@ -255,7 +256,7 @@ function Signup({ setloginsignup }) {
                         <label>Confirm Password <span className='required_symbol'>*</span></label>
                         <input
                             type="password"
-                            value={signUpForm.confirmPassword}
+                            value={signUpForm.ConfirmPassword}
                             name="ConfirmPassword"
                             onChange={handleChange}
                             // onChange={(e) => setSignUpForm({ ...signUpForm, [e.target.name]: e.target.value })}

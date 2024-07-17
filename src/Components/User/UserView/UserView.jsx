@@ -5,6 +5,8 @@ import './user.css'
 import { useNavigate } from 'react-router-dom';
 import { BASE_URL } from '../../../Constants/BaseUrl';
 import { formatDateForInput } from '../../../Helpers/Helpers';
+import loadingGif from '../../../Components/Assets/loading...gif';
+
 
 
 function UserView() {
@@ -19,7 +21,6 @@ function UserView() {
     const fetchuser = async () => {
       try {
         const userData = await Getuser(userId);
-        // console.log('Fetched company data:', userData);
         setuser(userData);
         setloading(false)
       } catch (error) {
@@ -32,12 +33,15 @@ function UserView() {
     } else {
       console.warn('No userId found');
     }
-
   }, [userId])
 
   if (loading) {
-    return <div>Loading...</div>;
-  }
+    return (
+      <div className="spinner-container">
+        <img src={loadingGif} alt="Loading..." className="spinner" />
+      </div>
+    );
+  };
 
   if (errors) {
     return <div>Error: {errors.message}</div>;
@@ -296,10 +300,6 @@ function UserView() {
                 )}
               </div>
             </div>
-
-
-
-
 
           </div>
         </div>

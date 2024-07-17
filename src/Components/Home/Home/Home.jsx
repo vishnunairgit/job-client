@@ -18,7 +18,6 @@ function Home() {
       <div>
         <Routes>
         <Route element={<AdminAuth />}>
-
           < Route path='/Home' element={< Alljobs />} />
           < Route path='/AddJobs' element={< AddJobs />} />
           < Route path='/Alljobs' element={< Alljobs />} />
@@ -27,9 +26,7 @@ function Home() {
           < Route path='/UserView' element={<UserView />}  />
           < Route path='/UserEdit/:userId' element={<UserEdit />} />
           < Route path='/UserEdit/:userId/Updatepassword' element={< Updatepassword/>}     />
-
           </Route  >
-
         </Routes>
       </div>
 
