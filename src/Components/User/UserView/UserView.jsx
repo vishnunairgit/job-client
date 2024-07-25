@@ -19,6 +19,7 @@ function UserView() {
   useEffect(() => {
 
     const fetchuser = async () => {
+      debugger
       try {
         const userData = await Getuser(userId);
         setuser(userData);
@@ -54,6 +55,8 @@ function UserView() {
   const handleback = () => {
     navigate('/Home')
   }
+
+
 
   return (
 
@@ -286,20 +289,29 @@ function UserView() {
               <div>
                 <h3>Logo</h3>
                 {user.Logo ? (
-                  <img className='logo' src={`${BASE_URL}userFiles/${user?.Logo}`} alt="Logo" />
+                  <img className="logo" src={`${BASE_URL}/UserFiles/${user?.Logo}`}  />
                 ) : (
                   <p>No logo available</p>
                 )}
               </div>
               <div>
                 <h3>Image</h3>
-                {user.Image ? (
-                  <img className='image' src={`${BASE_URL}userFiles/${user?.Image}`} alt="Image" />
+                {user?.Image ? (
+
+                  <img className="image" src={`${BASE_URL}/UserFiles/${user?.Image}`} alt="Image" />
                 ) : (
                   <p>No image available</p>
                 )}
               </div>
+
+              <div>
+                <h3>Image</h3>
+                {
+                  <img src={loadingGif} alt="" />
+                }
+              </div>
             </div>
+
 
           </div>
         </div>

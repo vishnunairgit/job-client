@@ -32,7 +32,6 @@ function Login({ setloginsignup }) {
     e.preventDefault();
     setIsLoading(true);
 
-
     try {
       const response = await login(loginForm);
       if (response.message === "Login successful" && response.token) {

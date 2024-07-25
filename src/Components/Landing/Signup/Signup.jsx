@@ -12,7 +12,7 @@ function Signup({ setloginsignup }) {
         Phonenumber: '',
         Email: '',
         password: '',
-        confirmPassword:'',
+        ConfirmPassword:'',
     });
     const [errors, setErrors] = useState({});
     const [success, setSuccess] = useState('');
