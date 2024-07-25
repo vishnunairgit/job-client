@@ -350,22 +350,25 @@ function UserEdit() {
                             {userFiles?.logoFile && (
                                 <img
                                     src={URL.createObjectURL(userFiles.logoFile)}
-                                    alt="ffffffffffffff"
+                                    alt="Logo"
                                     style={{ width: "100px", height: "100px" }}
                                 />
                             )}
                             {userFiles?.imageFile && (
                                 <img
                                     src={URL.createObjectURL(userFiles.imageFile)}
-                                    alt="fffffffffffff"
+                                    alt="Image"
                                     style={{ width: "100px", height: "100px" }}
                                 />
                             )}
 
                         </div>
 
-                        <div>
-                            <button type="button" className='button_01' onClick={updatePassword} >Update Password</button>
+                        <div className="row">
+                            <div className="col-25">
+                                <button type="button" className='button_03' onClick={updatePassword} >Update Password</button>
+                            </div>
+
                         </div>
 
                     </div>
@@ -375,7 +378,7 @@ function UserEdit() {
                         Back
                     </button>
 
-                    <button className="button_03" type="submit" >
+                    <button className="button_01" type="submit" >
                         Submit
                     </button>
                 </div>

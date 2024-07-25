@@ -303,13 +303,6 @@ function UserView() {
                   <p>No image available</p>
                 )}
               </div>
-
-              <div>
-                <h3>Image</h3>
-                {
-                  <img src={loadingGif} alt="" />
-                }
-              </div>
             </div>
 
 
