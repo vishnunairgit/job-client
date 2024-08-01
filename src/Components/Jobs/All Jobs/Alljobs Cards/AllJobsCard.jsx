@@ -6,6 +6,7 @@ import cash from '../../../Assets/icons8-rupee-24.png';
 import location from '../../../Assets/icons8-location-24 (1).png';
 import { calculateTimeAgo } from '../../../../Helpers/Helpers';
 import { useNavigate } from 'react-router-dom';
+import { BASE_URL } from '../../../../Constants/BaseUrl';
 
 function AllJobsCard({ job }) {
   const navigate = useNavigate();
@@ -36,8 +37,14 @@ function AllJobsCard({ job }) {
           </div>
 
           <div className="header-right">
-            <img src={location} alt="Location Icon" />
-            {/* <span>{job?.Location}</span> */}
+          <div>
+                
+                {job.CreatedBy?.Logo ? (
+                  <img className="logo" src={`${BASE_URL}/UserFiles/${job.CreatedBy?.Logo}`}  />
+                ) : (
+                  <p>No logo available</p>
+                )}
+              </div>
           </div>
         </div>
 

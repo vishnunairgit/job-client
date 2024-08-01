@@ -19,7 +19,7 @@ function UserView() {
   useEffect(() => {
 
     const fetchuser = async () => {
-      debugger
+      // debugger
       try {
         const userData = await Getuser(userId);
         setuser(userData);
@@ -237,8 +237,6 @@ function UserView() {
                   name="Incorporationdate"
                   placeholder="Incorporationdate..."
                   value={formatDateForInput(user.Incorporationdate)}
-
-                  // value={formatDateForInput(user?.Incorporationdate)}
                   readOnly
                   required
                 />

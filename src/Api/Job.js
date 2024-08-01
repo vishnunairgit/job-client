@@ -11,16 +11,27 @@ export const Addjob = async (addJobs) => {
     }
 };
 
-// getallJobs
-
-export const getAllJobs = async (userId) => {
+// getJobs
+export const getJobs = async (userId) => {
 
     try {
-        const response = await AxiosInstance.get('/getAllJobs', {
+        const response = await AxiosInstance.get('/getJobs', {
             headers: {
                 'UserId': userId
             }
         });
+        return response.data;
+    } catch (error) {
+        console.error("Error fetching job:", error);
+        throw error;
+    }
+}
+
+// getallJobs
+export const getAllJob = async () => {
+
+    try {
+        const response = await AxiosInstance.get('/getAllJobs');
         return response.data;
     } catch (error) {
         console.error("Error fetching job:", error);
@@ -52,7 +63,6 @@ export const updateJob = async (jobId, jobData) => {
 }
 
 // Delete the Job
-
 export const deleteJob = async (jobId) => {
     try {
         const response = await AxiosInstance.delete(`/DeleteJob/${jobId}`)

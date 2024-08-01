@@ -48,7 +48,7 @@ function AddJobs() {
         alert('Internal Server Error')
       }      
     } catch (error) {
-      console.log(error);
+      console.log(error); 
       alert('An error occurred while adding the job');
     }
   }

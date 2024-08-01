@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getAllJobs } from '../../../../Api/Job';
+import { getJobs } from '../../../../Api/Job';
 import AllJobsCard from '../Alljobs Cards/AllJobsCard';
 import { useSelector } from 'react-redux';
 import loadingGif from '../../../Assets/loading...gif';
@@ -7,18 +7,16 @@ import './alljobs.css';
 
 function Alljobs() {
     const userId = useSelector(state => state.user.userDetails.userId);
-
     const [AllJobs, setAllJobs] = useState([]);
     const [loading, setloading] = useState(true);
     const [error, seterror] = useState(null);
 
 
     useEffect(() => {
-
         const fetchJobs = async () => {
             try {
                 debugger
-                const jobData = await getAllJobs(userId);
+                const jobData = await getJobs(userId);
                 setAllJobs(jobData)
                 setloading(false)
             } catch (error) {

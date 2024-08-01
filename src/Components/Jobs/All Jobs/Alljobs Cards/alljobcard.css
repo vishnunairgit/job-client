@@ -50,6 +50,12 @@
   justify-content: center;
 }
 
+.job-card .header-right  img{
+  width: 90px;
+}
+
+
+
 .job-card .experience img {
   margin-right: 8px;
   width: 15%;

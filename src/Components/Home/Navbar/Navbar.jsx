@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import './navbar.css'
 import logo from '../../Assets/net.america.png'
-import notification from '..//../Assets/icons8-notification-24.png'
+import notification from '../../Assets/icons8-notification-24.png'
 import user from '../../Assets/icons8-user-24.png'
 import { useNavigate } from 'react-router-dom'
 
@@ -29,6 +29,10 @@ function Navbar() {
 
     const handleprofile = ()=>{
         navigate('/UserView')
+    }
+
+    const handlecompany = ()=>{
+        navigate('/Mycompany')
     }
    
 
@@ -70,6 +74,7 @@ function Navbar() {
                         </button>
                         <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                         <li><a className="dropdown-item" onClick={handleprofile}>Profile</a></li>
+                        <li><a className="dropdown-item" onClick={handlecompany}>My Company</a></li>
                         <li><a className="dropdown-item" onClick={handlelogout}>logout</a></li>
 
 
