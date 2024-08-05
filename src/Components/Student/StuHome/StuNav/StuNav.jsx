@@ -19,12 +19,6 @@ function StuNav() {
                         <img src={logo} alt="" onClick={handleHome} />
                     </div>
 
-                    <div>
-
-                    </div>
-
-                    
-
                     <div className="nav-rightside">
                         <div className="dropdown-noti">
                             <button className="btn btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import { getSingleJobs, updateJob } from '../../../Api/Job';
-import './editjob.css'
 import { formatDateForInput } from '../../../Helpers/Helpers';
-import loadingGif from '../../Assets/loading...gif';
+import Loading from '../../Loading/Loading';
+import './editjob.css'
 
 
 function EditJob() {
@@ -50,14 +50,12 @@ function EditJob() {
 
   if (loading) {
     return (
-        <div className="spinner-container">
-            <img src={loadingGif} alt="Loading..." className="spinner" />
-        </div>
+      <Loading />
     );
-};
+  };
 
   if (error) {
-    return <div>{error.message}</div>
+    return <div>Error: {error.message}</div>;
   }
 
   const handleBack = () => {
@@ -206,7 +204,6 @@ function EditJob() {
                   name="Date"
                   placeholder="Date..."
                   value={formatDateForInput(formData?.Date || '')}
-                  // value={formData.Date || ''}
                   onChange={handleInputChange}
 
                   required
@@ -253,8 +250,6 @@ function EditJob() {
               </div>
             </div>
 
-
-
             <div className="row">
               <div className="col-25">
                 <label htmlFor="Keyskills">
@@ -282,7 +277,6 @@ function EditJob() {
               </div>
               <div className="col-75">
                 <textarea
-                  // type="text"
                   id="Description"
                   name="Description"
                   placeholder="Enter Description, each point on a new line..."
@@ -301,10 +295,6 @@ function EditJob() {
           <button className="button_03" type="button" onClick={handleBack}>
             Back
           </button>
-
-          {/* <button className="button_02" type="reset">
-            Reset
-          </button> */}
 
           <button className="button_01" type="submit" onClick={handleSave}>
             Submit

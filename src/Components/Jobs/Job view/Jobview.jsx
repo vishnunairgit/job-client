@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { getSingleJobs, deleteJob } from '../../../Api/Job'
 import './jobview.css'
 import { calculateTimeAgo, formatDate } from '../../../Helpers/Helpers';
-import loadingGif from '../../Assets/loading...gif';
+import Loading from '../../Loading/Loading';
 
 
 
@@ -36,9 +36,7 @@ function Jobview() {
 
     if (loading) {
         return (
-            <div className="spinner-container">
-                <img src={loadingGif} alt="Loading..." className="spinner" />
-            </div>
+            <Loading />
         );
     };
 
@@ -60,7 +58,6 @@ function Jobview() {
             try {
                 const response = await deleteJob(jobId);
                 alert(response.message)
-                // alert('Job deleted successfully!');
                 navigate('/Alljobs');
             } catch (error) {
                 seterror(error);
@@ -70,14 +67,12 @@ function Jobview() {
     }
     if (loading) {
         return (
-            <div className="spinner-container">
-                <img src={loadingGif} alt="Loading..." className="spinner" />
-            </div>
+            <Loading />
         );
     };
 
     if (error) {
-        return <div>{error.message}</div>;
+        return <div>Error: {error.message}</div>;
     }
 
     return (

@@ -1,0 +1,93 @@
+.stujobView {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+
+.stujobView .job-card {
+    border: 1px solid black;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    width: 95%;
+    padding-bottom: 0px;
+
+}
+
+.stujobView .Job-First-box {
+    padding: 20px;
+}
+
+.stujobView button {
+    border-radius: 5px;
+    min-width: 90px;
+}
+
+.stujobView .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 0;
+    font-size: 1.8rem;
+    /* background-color: #ececec; */
+    padding: 5px;
+}
+
+.stujobView .jobRow {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    text-align: left;
+    margin-left: 20px;
+
+}
+
+.stujobView .jobLabel {
+    flex-basis: 260px;
+    white-space: pre-wrap;
+}
+
+.stujobView .Location,
+.Qualifications {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.stujobView .job-card h4 {
+    padding: 20px;
+}
+
+.stujobView p {
+    margin: 5px 0;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.stujobView .Applicants {
+    cursor: pointer;
+}
+
+.stujobView .Applicants .jobLabel:hover {
+    background-color: rgb(219, 219, 233);
+}
+
+.stujobView .Job-Date-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 10px;
+    border-left-width: 15%;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.stujobView .bottum-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 10px;
+}

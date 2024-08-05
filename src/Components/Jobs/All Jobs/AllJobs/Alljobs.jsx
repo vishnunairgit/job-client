@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { getJobs } from '../../../../Api/Job';
 import AllJobsCard from '../Alljobs Cards/AllJobsCard';
 import { useSelector } from 'react-redux';
-import loadingGif from '../../../Assets/loading...gif';
 import './alljobs.css';
+import Loading from '../../../Loading/Loading';
 
 function Alljobs() {
     const userId = useSelector(state => state.user.userDetails.userId);
@@ -32,15 +32,13 @@ function Alljobs() {
 
     if (loading) {
         return (
-            <div className="spinner-container">
-                <img src={loadingGif} alt="Loading..." className="spinner" />
-            </div>
+            <Loading/>
         );
     };
 
-    // if (error) {
-    //     return <div>Error: {error.message}</div>;
-    // }
+    if (error) {
+        return <div>Error: {error.message}</div>;
+    }
 
     return (
         <div>

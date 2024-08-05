@@ -1,99 +1,67 @@
-// import React, { useState } from 'react';
-// import { useEffect } from 'react';
-// import { getAllJob } from '../../../../Api/Job';
-// import loadingGif from '../../../Assets/loading...gif';
-
-
-// function StuJobs() {
-
-//   const [Alljob, setAlljob] = useState([])
-//   const [loading, setloading] = useState(true)
-//   const [error, seterror] = useState(null)
-
-//   useEffect(() => {
-//     const FetchAllJobs = async () => {
-//       try {
-//         const AllJobs = await getAllJob();
-//         setAlljob(AllJobs)
-//         setloading(false)
-//       } catch (error) {
-//         seterror(error);
-//         setloading(false)
-//       }
-//     }
-//     FetchAllJobs();
-//   }, [])
-
-//   if (loading) {
-//     return (
-//       <div className="spinner-container">
-//         <img src={loadingGif} alt="Loading..." className="spinner" />
-//       </div>
-//     );
-//   };
-
-//   return (
-
-//     <div>
-
-//       StuJobs
-//       kkkkk\
-//       kkkk
-
-
-//     </div>
-//   )
-// }
-
-// export default StuJobs
-
-
 
 import React, { useState, useEffect } from 'react';
 import { getAllJob } from '../../../../Api/Job';
-import loadingGif from '../../../Assets/loading...gif';
-import './stujobs.css'; // Import your CSS file
+import './stujobs.css';
 import StuJobCard from './Stujobcard/StuJobCard';
+import Loading from '../../../Loading/Loading';
+import { useSelector } from 'react-redux';
+import './stujobs.css'
 
-function StuJobs() {
-  const [AllJobs, setAllJobs] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+function Alljobs() {
+    const userId = useSelector(state => state.user.userDetails.userId);
+    const [allJobs, setAllJobs] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+    const [selectedJob, setSelectedJob] = useState(null);
 
-  useEffect(() => {
-    const fetchAllJobs = async () => {
-      try {
-        const AllJobs = await getAllJob();
-        setAllJobs(AllJobs);
-        setLoading(false);
-      } catch (error) {
-        setError(error);
-        setLoading(false);
-      }
-    };
-    fetchAllJobs();
-  }, []);
+    useEffect(() => {
+        const fetchJobs = async () => {
+            try {
+                const jobData = await getAllJob(userId);
+                setAllJobs(jobData);
+                setLoading(false);
+            } catch (error) {
+                setError(error);
+                setLoading(false);
+            }
+        };
+        if (userId) {
+            fetchJobs();
+        }
+    }, [userId]);
 
-  if (loading) {
+    if (loading) {
+        return <Loading />;
+    }
+
+    if (error) {
+        return <div>Error: {error.message}</div>;
+    }
+
     return (
-      <div className="spinner-container">
-        <img src={loadingGif} alt="Loading..." className="spinner" />
-      </div>
+        <div className="jobs-container">
+            <div className="jobs-list">
+                {allJobs.length > 0 ? (
+                    allJobs.map((job) => (
+                        <div
+                            key={job._id}
+                            className="job-item"
+                            onClick={() => setSelectedJob(job)}
+                        >
+                            <h4>{job.JobTitle}</h4>
+                            <p>Location:<strong>{job.Location}</strong></p>
+                            <p>Salary:<strong>{job.Salary} </strong>Lacs P.A</p>
+                        </div>
+                    ))
+                ) : (<div className="no-jobs">No jobs available</div>)
+
+                }
+            </div>
+            <div className="job-details">
+                <StuJobCard job={selectedJob} />
+            </div>
+        </div>
     );
-  }
-
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
-  return (
-    <div>
-      {AllJobs.length > 0 ? (
-        AllJobs.map((job) => < StuJobCard key={job.__id} job={job} />)
-      ) : (<h4 style={{ alignItems: 'center' }}>No Job Posted </h4>
-      )}
-
-    </div>
-  );
 }
 
-export default StuJobs;
+export default Alljobs;
