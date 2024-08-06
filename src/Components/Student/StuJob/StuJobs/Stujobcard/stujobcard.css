@@ -3,22 +3,30 @@
     align-items: center;
     justify-content: center;
     margin: 5px;
+
+
 }
 
 .stujobView .job-card {
-    border: 1px solid black;
     border-radius: 8px;
     margin-bottom: 20px;
     background-color: #fff;
-    width: 95%;
-    padding-bottom: 0px;
+    padding-bottom: 10px;
+    width: 100%;
+    padding:50px;
 
 }
 
-.stujobView .Job-First-box {
+.stujobView .Jobbox {
     padding: 20px;
 }
-
+.jobData {
+    display: flex;
+    justify-content: space-evenly;
+}
+.jobData-left{
+    width: 50%;
+}
 .stujobView button {
     border-radius: 5px;
     min-width: 90px;
