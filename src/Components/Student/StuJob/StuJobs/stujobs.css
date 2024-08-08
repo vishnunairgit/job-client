@@ -73,13 +73,13 @@
 .jobs-container {
   display: flex;
   height: 100%;
-  position: -webkit-sticky;
+  /* position: -webkit-sticky; */
   position: fixed;
   width: 100vw;
 }
 
 .jobs-list {
-  width: 500px;
+  width: 700px;
   border-right: 1px solid #ccc;
   overflow-y: auto;
   padding: 10px;
@@ -145,4 +145,19 @@
   font-size: 1.5em;
   color: #777;
   text-align: center;
+}
+
+.jobs-container .jobRow {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  /* text-align: left; */
+  margin-left: 40px;
+
+
+}
+
+.jobs-container .jobLabel {
+  flex-basis: 30px;
+  white-space: pre-wrap;
 }

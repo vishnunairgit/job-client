@@ -2,6 +2,7 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import StuJobs from '../../StuJob/StuJobs/StuJobs'
 import StuNav from '../../../Student/StuHome/StuNav/StuNav'
+import AppliedJob from '../../StuJob/StuAppliedJob/AppliedJob'
 
 function StuHome() {
   return (
@@ -10,7 +11,8 @@ function StuHome() {
       <div>
         <Routes>
             < Route path='/' element={<  StuJobs />} />
-            < Route path='/StuJobs' element={< StuJobs />} />
+            {/* < Route path='/StuJobs' element={< StuJobs />} /> */}
+            < Route path='/AppliedJob' element={< AppliedJob />}  />
         </Routes>
       </div>
     </div>
@@ -18,3 +20,4 @@ function StuHome() {
 }
 
 export default StuHome
+

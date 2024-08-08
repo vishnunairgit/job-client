@@ -3,8 +3,6 @@
     align-items: center;
     justify-content: center;
     margin: 5px;
-
-
 }
 
 .stujobView .job-card {
@@ -13,36 +11,20 @@
     background-color: #fff;
     padding-bottom: 10px;
     width: 100%;
-    padding:50px;
+    padding: 5px 15px 50px 15px;
 
 }
-
-.stujobView .Jobbox {
-    padding: 20px;
-}
-.jobData {
-    display: flex;
-    justify-content: space-evenly;
-}
-.jobData-left{
-    width: 50%;
-}
-.stujobView button {
-    border-radius: 5px;
-    min-width: 90px;
-}
-
-.stujobView .title {
+.stujobView .job-title {
     display: flex;
     justify-content: center;
     align-items: center;
     justify-content: space-around;
     margin-top: 0;
-    font-size: 1.8rem;
-    /* background-color: #ececec; */
     padding: 5px;
 }
-
+.stujobView .job-title {
+    display: flex;
+}
 .stujobView .jobRow {
     display: flex;
     align-items: center;
@@ -57,21 +39,6 @@
     white-space: pre-wrap;
 }
 
-.stujobView .Location,
-.Qualifications {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.stujobView .job-card h4 {
-    padding: 20px;
-}
-
-.stujobView p {
-    margin: 5px 0;
-    color: #666;
-    font-size: 1.1rem;
-}
 
 .stujobView .Applicants {
     cursor: pointer;
@@ -93,9 +60,9 @@
     margin: 0 auto;
 }
 
-.stujobView .bottum-button {
+/* .stujobView .bottum-button {
     display: flex;
     align-items: center;
     justify-content: space-around;
     padding-top: 10px;
-}
+} */

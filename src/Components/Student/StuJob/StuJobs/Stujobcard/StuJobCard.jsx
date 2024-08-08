@@ -1,10 +1,21 @@
 import React from 'react';
 import './stujobcard.css'
 import { calculateTimeAgo, formatDate } from '../../../../../Helpers/Helpers';
+import { useNavigate } from 'react-router-dom';
 
 function StuJobCard({ job }) {
+  const navigate = useNavigate()
+
   if (!job) {
     return <div>Select a job to see details</div>;
+  }
+
+  // const handleBack =()=>{
+  //   navigate('/StuHome')
+  // }
+
+  const handleApplyJob = ()=>{
+    navigate('/student/AppliedJob')
   }
   return (
     <div>
@@ -13,19 +24,24 @@ function StuJobCard({ job }) {
 
         <div className="job-card" >
 
-          <div className='title'>
-
-            <div className='job-title'>
-              <div><strong>{job.JobTitle}</strong></div>
-            </div>
+          <div className='job-title'>
+              <h3><strong>{job.JobTitle}</strong></h3>
+              <button className='button_01' onClick={handleApplyJob}>Apply Now</button>
           </div>
 
           <div className='Job-First-box'>
             <div>
-              
+
             </div>
 
             <div>
+
+            <div className="jobRow">
+                <div className="jobLabel">
+                  <strong>Company</strong>
+                </div>
+                <div className="">: {job.CreatedBy.UserName} </div>
+              </div>
               <div className="jobRow">
                 <div className="jobLabel">
                   <strong>Location</strong>
@@ -93,6 +109,7 @@ function StuJobCard({ job }) {
               </div>
               <div className="">: {job?.Keyskills ? job.Keyskills.split(' ').join(' / ') : "No key skills provided"} </div>
             </div>
+
             <div className='jobRow'>
               {job?.
                 Description
@@ -125,9 +142,6 @@ function StuJobCard({ job }) {
       </div>
 
     </div>
-
-
-
 
 
   )
