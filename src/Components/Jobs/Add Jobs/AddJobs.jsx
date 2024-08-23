@@ -69,7 +69,6 @@ function AddJobs() {
               <div className="col-75">
                 <input
                   type="text"
-                  id="JobTitle"
                   name="JobTitle"
                   placeholder="Job Title..."
                   onChange={handleChange}
@@ -88,7 +87,6 @@ function AddJobs() {
               <div className="col-75">
                 <input
                   type="text"
-                  id="Experience"
                   name="Experience"
                   placeholder="3-5..."
                   onChange={handleChange}
@@ -107,7 +105,6 @@ function AddJobs() {
               <div className="col-75">
                 <input
                   type="text"
-                  id="Location"
                   name="Location"
                   placeholder="Job Location..."
                   onChange={handleChange}
@@ -218,8 +215,6 @@ function AddJobs() {
               </div>
             </div>
 
-        
-            
             <div className="row">
               <div className="col-25">
                 <label htmlFor="Keyskills">

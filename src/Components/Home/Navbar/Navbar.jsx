@@ -34,6 +34,10 @@ function Navbar() {
     const handlecompany = ()=>{
         navigate('/Mycompany')
     }
+
+    const HandleNotification = ()=>{
+        navigate('/Notifications')
+    }
    
 
 
@@ -59,13 +63,13 @@ function Navbar() {
                 <div className="nav-rightside">
 
                     <div className="dropdown-noti">
-                        <button className="btn btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button className="btn btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"  onClick={HandleNotification}>
                             <img src={notification} alt="" />
                         </button>
-                        <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        {/* <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             <li><a className="dropdown-item" href="#">Action</a></li>
                             <li><a className="dropdown-item" href="#">Another action</a></li>
-                        </ul>
+                        </ul> */}
                     </div>
 
                     <div className="dropdown-user">

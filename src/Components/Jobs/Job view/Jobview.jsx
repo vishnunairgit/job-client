@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
-import { getSingleJobs, deleteJob } from '../../../Api/Job'
+import { deleteJob, getSingleJob } from '../../../Api/Job'
 import './jobview.css'
 import { calculateTimeAgo, formatDate } from '../../../Helpers/Helpers';
 import Loading from '../../Loading/Loading';
@@ -8,11 +8,7 @@ import Loading from '../../Loading/Loading';
 
 
 function Jobview() {
-
-
-
     const navigate = useNavigate()
-
     const { jobId } = useParams();
     const [job, setjob] = useState(null)
     const [loading, setloading] = useState(true)
@@ -22,7 +18,7 @@ function Jobview() {
     useEffect(() => {
         const fetchJobDetails = async () => {
             try {
-                const jobData = await getSingleJobs(jobId)
+                const jobData = await getSingleJob(jobId)
                 setjob(jobData)
                 setloading(false)
             } catch (error) {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
-import { getSingleJobs, updateJob } from '../../../Api/Job';
+import { getSingleJob, updateJob } from '../../../Api/Job';
 import { formatDateForInput } from '../../../Helpers/Helpers';
 import Loading from '../../Loading/Loading';
 import './editjob.css'
@@ -20,7 +20,7 @@ function EditJob() {
 
     const fetchJobDetails = async () => {
       try {
-        const jobData = await getSingleJobs(jobId)
+        const jobData = await getSingleJob(jobId)
         setjob(jobData);
         setformData(jobData);
         setloading(false)

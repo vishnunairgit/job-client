@@ -114,7 +114,6 @@ function UserEdit() {
                             <div className="col-75">
                                 <input
                                     type="text"
-                                    // id="UserName"
                                     name="UserName"
                                     placeholder="UserName..."
                                     onChange={handleUserChange}
@@ -134,7 +133,6 @@ function UserEdit() {
                             <div className="col-75">
                                 <input
                                     type="text"
-                                    // id="CompanyName"
                                     name="CompanyName"
                                     placeholder="CompanyName..."
                                     onChange={handleUserChange}
@@ -192,7 +190,6 @@ function UserEdit() {
                             <div className="col-75">
                                 <input
                                     type="text"
-                                    // id="Phonenumber"
                                     name="Phonenumber"
                                     placeholder="Phonenumber..."
                                     onChange={handleUserChange}

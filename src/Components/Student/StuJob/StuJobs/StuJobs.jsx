@@ -51,19 +51,17 @@ function Alljobs() {
                             className="job-item"
                             onClick={() => setSelectedJob(job)}
                         >
-                            <div className='job-details'>
-                                <div className='job-logo'>
+                            <div className="job-details">
+                                <div className="job-logo">
                                     {job.CreatedBy?.Logo ? (
                                         <img className="logo" src={`${BASE_URL}/UserFiles/${job.CreatedBy?.Logo}`} alt="Company Logo" />
                                     ) : (
-                                        <p>No logo </p>
+                                        <p>No logo</p>
                                     )}
                                 </div>
-                                <div className='job-info'>
-
+                                <div className="job-info">
                                     <h5><strong>{job.JobTitle}</strong></h5>
                                     <h5><strong>{job?.CreatedBy.UserName}</strong></h5>
-
                                     <div className="jobRow">
                                         <div className="jobLabel">
                                             <strong><img src={Location} alt="" /></strong>
@@ -76,11 +74,9 @@ function Alljobs() {
                                         </div>
                                         <div className="">: {job?.Salary} Lacs P.A. </div>
                                     </div>
-                                    <div className='Job-Date-box'>
-                                        <div><strong>Posted : </strong>{calculateTimeAgo(job?.Date)}</div>
+                                    <div className="Job-Date-box">
+                                        <div><strong>Posted: </strong>{calculateTimeAgo(job?.Date)}</div>
                                     </div>
-
-
                                 </div>
                             </div>
                         </div>
@@ -94,6 +90,7 @@ function Alljobs() {
             </div>
         </div>
     );
+    
 }
 
 export default Alljobs;

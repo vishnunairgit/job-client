@@ -11,23 +11,21 @@ export const Addjob = async (addJobs) => {
     }
 };
 
-// getJobs
+// Get jobs
 export const getJobs = async (userId) => {
-
     try {
-        const response = await AxiosInstance.get('/getJobs', {
-            headers: {
-                'UserId': userId
-            }
+        const response = await AxiosInstance.get(`/getJobs`, {
+            params: { userId }
         });
         return response.data;
     } catch (error) {
-        console.error("Error fetching job:", error);
+        console.error("Error fetching jobs:", error);
         throw error;
     }
-}
+};
 
-// getallJobs
+
+// Get all Jobs
 export const getAllJob = async () => {
 
     try {
@@ -41,9 +39,9 @@ export const getAllJob = async () => {
 
 
 // GetsingleJob
-export const getSingleJobs = async (jobId) => {
+export const getSingleJob = async (jobId) => {
     try {
-        const response = await AxiosInstance.get(`/getSingleJobs/${jobId}`)
+        const response = await AxiosInstance.get(`/getSingleJob/${jobId}`)
         return response.data
     } catch (error) {
         console.error("Error fetching single job:", error);
@@ -72,4 +70,20 @@ export const deleteJob = async (jobId) => {
         throw error;
     }
 }
+
+// Apply job
+export const ApplyJob = async (formData) => {
+    try {
+      const response = await AxiosInstance.post('/ApplyJob', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      });
+      return response.data;
+    } catch (error) {
+      console.error("Error fetching Adding the job:", error);
+      throw error;
+    }
+  }
+  
 

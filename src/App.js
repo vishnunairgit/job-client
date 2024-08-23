@@ -2,28 +2,27 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Landing from './Components/Landing/Landing/Landing';
 import Home from './Components/Home/Home/Home';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import StuHome from './Components/Student/StuHome/StuHome/StuHome';
-
+// import { useEffect } from 'react';
+// import io from 'socket.io-client';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
+
+
   return (
     <div className="App">
-      {/* <UserProvider> */}
-        <BrowserRouter>
-          <Routes>
-            <Route >
-              <Route path="/" element={<Landing />} />
-              <Route path="*" element={<Home />} />
+      <BrowserRouter>
+        <Routes>
+          <Route >
+            <Route path="/" element={<Landing />} />
+            <Route path="*" element={<Home />} />
+            <Route path="/student/*" element={<StuHome />} />
 
-              <Route path="/student/*" element={<StuHome />} />
-
-
-            </Route>
-          </Routes>
-        </BrowserRouter>
-      {/* </UserProvider> */}
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
