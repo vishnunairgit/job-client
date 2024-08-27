@@ -6,6 +6,7 @@ import StuHome from './Components/Student/StuHome/StuHome/StuHome';
 // import { useEffect } from 'react';
 // import io from 'socket.io-client';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Notifications from './Components/Notifications/Notifications';
 
 
 function App() {
@@ -19,6 +20,8 @@ function App() {
             <Route path="/" element={<Landing />} />
             <Route path="*" element={<Home />} />
             <Route path="/student/*" element={<StuHome />} />
+            <Route path='/Notifications' element={<Notifications />} />
+
 
           </Route>
         </Routes>

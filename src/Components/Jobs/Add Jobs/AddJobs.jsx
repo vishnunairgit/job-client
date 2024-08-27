@@ -21,7 +21,7 @@ function AddJobs() {
     Qualifications: '',
     EmploymentType: '',
     Openings: '',
-    Date: '',
+    // Date: '',
     Salary:'',
     Description: '',
     Keyskills: '',
@@ -38,10 +38,12 @@ function AddJobs() {
     // const userId = useSelector(state => state.user.userDetails.userId);
 
     try {
-      const addJobData = {...addJobs, CreatedBy:userId};
+      const addJobData = {...addJobs, CreatedBy:userId,      
+         Date: new Date().toISOString(), 
+      };
       const response = await Addjob(addJobData);
 
-      if (response.message === 'Job added successfully') {
+      if (response.message === 'Job added and notification sent successfully') {
         alert('job added successful')
         navigate('/Alljobs')
       }else {
@@ -177,7 +179,7 @@ function AddJobs() {
               </div>
             </div>
 
-            <div className="row">
+            {/* <div className="row">
               <div className="col-25">
                 <label htmlFor="Date">
                   JOB POST DATE<span className="mandatory-indicator">*</span>
@@ -194,7 +196,7 @@ function AddJobs() {
                   required
                 />
               </div>
-            </div>
+            </div> */}
 
             <div className="row">
               <div className="col-25">
