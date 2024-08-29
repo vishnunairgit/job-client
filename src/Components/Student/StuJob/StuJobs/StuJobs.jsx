@@ -11,7 +11,7 @@ import salary from "../../../Assets/icons8-rupee-24.png"
 import { calculateTimeAgo, formatDate } from '../../../../Helpers/Helpers';
 
 function Alljobs() {
-    const userId = useSelector(state => state.user.userDetails.userId);
+    // const userId = useSelector(state => state.user.userDetails.userId);
     const [allJobs, setAllJobs] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -20,7 +20,8 @@ function Alljobs() {
     useEffect(() => {
         const fetchJobs = async () => {
             try {
-                const jobData = await getAllJob(userId);
+                const jobData = await getAllJob();
+                // const jobData = await getAllJob(userId);
                 setAllJobs(jobData);
                 setLoading(false);
             } catch (error) {
@@ -28,10 +29,10 @@ function Alljobs() {
                 setLoading(false);
             }
         };
-        if (userId) {
-            fetchJobs();
-        }
-    }, [userId]);
+
+        fetchJobs();
+
+    }, []);
 
     if (loading) {
         return <Loading />;
@@ -90,7 +91,7 @@ function Alljobs() {
             </div>
         </div>
     );
-    
+
 }
 
 export default Alljobs;

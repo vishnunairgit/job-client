@@ -10,6 +10,7 @@ import UserEdit from '../../User/UserEdit/UserEdit';
 import Updatepassword from '../../User/UserEdit/UpdateUserpassword/Updatepassword';
 import UserView from '../../User/UserView/UserView';
 import Mycompany from '../../User/MyCompany/Mycompany';
+import Notifications from '../../Notifications/Notifications';
 
 
 function Home() {
@@ -18,16 +19,18 @@ function Home() {
       <Navbar />
       <div>
         <Routes>
-        <Route element={<AdminAuth />}>
-          < Route path='/Home' element={< Mycompany />} />
-          < Route path='/AddJobs' element={< AddJobs />} />
-          < Route path='/Alljobs' element={< Alljobs />} />
-          < Route path='/Jobview/:jobId' element={< Jobview />} />
-          < Route path='/EditJob/:jobId' element={< EditJob />} />
-          < Route path='/UserView' element={<UserView />}  />
-          < Route path='/Mycompany' element={<Mycompany />} />
-          < Route path='/UserEdit/:userId' element={<UserEdit />} />
-          < Route path='/UserEdit/:userId/Updatepassword' element={< Updatepassword/>} />
+          <Route element={<AdminAuth />}>
+            < Route path='/Home' element={< Mycompany />} />
+            < Route path='/AddJobs' element={< AddJobs />} />
+            < Route path='/Alljobs' element={< Alljobs />} />
+            < Route path='/Jobview/:jobId' element={< Jobview />} />
+            < Route path='/EditJob/:jobId' element={< EditJob />} />
+            < Route path='/UserView' element={<UserView />} />
+            < Route path='/Mycompany' element={<Mycompany />} />
+            < Route path='/UserEdit/:userId' element={<UserEdit />} />
+            < Route path='/UserEdit/:userId/Updatepassword' element={< Updatepassword />} />
+            < Route path='/Notifications' element={< Notifications />} />
+
 
           </Route  >
         </Routes>
