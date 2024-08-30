@@ -2,58 +2,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: white;
     border-bottom: 1px solid black;
-    color: black;
-    padding: 0.5rem 1rem;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-weight: 400;
-    font-size: .9375rem;
-}
-
-.navbarHome .nav-leftside {
-    display: flex;
-    align-items: center;
-}
-
-.navbarHome .nav-leftside img {
-    width: 15%;
-}
-
-.navbarHome .dropdown-jobs {
-    padding-left: 4%;
-}
-
-.navbarHome .dropdown-menu {
-    margin-top: 2% !important;
-
-}
-
-
-
-.navbarHome .nav-rightside {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-
-.navbarHome .dropdown-user{
-    padding-right: 25px;
-} */
-
-
-/* Navbar CSS */
-.navbarHome {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 10px 20px;
-    border-bottom: 1px solid black;
-
-    /* background-color: #2c3e50; */
-    color: white;
 }
+
 .nav-leftside {
     display: flex;
     align-items: center;
@@ -61,16 +13,15 @@
 
 .nav-leftside img {
     cursor: pointer;
-    height: 50px;
-}
+    width: 15%;
+} */
 
 /* Dropdown Styling */
-.dropdown-menu {
+
+/* .dropdown-menu {
     background-color: #ecf0f1;
-    border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     min-width: 250px;
-    padding: 10px 0;
 }
 
 .dropdown-item {
@@ -89,7 +40,100 @@
 .dropdown-item span:first-child {
     font-weight: bold;
     margin-bottom: 5px;
-    color: #2980b9;
+    color: #077fcf;
+}
+
+.dropdown-item span:last-child {
+    font-size: 0.9em;
+    color: #7f8c8d;
+}
+
+.dropdown-item:hover {
+    background-color: #d0eaf5;
+} */
+
+/* Notification Icon */
+
+/* .navbarHome .nav-rightside {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-noti img {
+    width: 24px;
+    height: 24px;
+}
+
+.dropdown-noti .btn {
+    position: relative;
+} */
+
+/* Notification Badge */
+
+/* .notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -1px;
+    background-color: #ee220b;
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    display: none;
+}
+
+.notification-badge.visible {
+    display: inline-block;
+} */
+
+
+
+
+
+
+.navbarHome {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+    padding: 10px 20px;
+}
+
+.nav-leftside img {
+    cursor: pointer;
+    width: 15%;
+}
+
+.nav-rightside {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-menu {
+    background-color: #ecf0f1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 250px;
+}
+
+.dropdown-item {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 15px;
+    border-bottom: 1px solid #bdc3c7;
+    color: #34495e;
+    text-decoration: none;
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.dropdown-item span:first-child {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #077fcf;
 }
 
 .dropdown-item span:last-child {
@@ -101,51 +145,22 @@
     background-color: #d0eaf5;
 }
 
-/* Notification Icon */
-.nav-rightside .dropdown-noti img {
-    width: 24px;
-    height: 24px;
-}
-
-.dropdown-noti .btn {
+.nav-rightside .btn {
     position: relative;
 }
 
-/* Notification Badge */
 .notification-badge {
     position: absolute;
     top: -5px;
-    right: -10px;
-    background-color: #e74c3c;
+    right: -1px;
+    background-color: #ee220b;
     color: white;
     font-size: 12px;
     padding: 2px 6px;
     border-radius: 50%;
-    display: none; /* Hidden by default */
 }
 
-.notification-badge.visible {
-    display: inline-block; /* Show when there's a notification */
-}
-
-/* Loading Spinner */
 .loading-spinner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    padding: 20px 0;
-}
-
-.loading-spinner img {
-    width: 30px;
-    height: 30px;
-}
-
-
-.navbarHome .nav-rightside {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
+    text-align: center;
+    padding: 10px;
 }

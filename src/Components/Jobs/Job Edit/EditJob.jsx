@@ -10,7 +10,7 @@ function EditJob() {
 
   const { jobId } = useParams();
   const [job, setjob] = useState(null)
-  const [loading, setloading] = useState(true)
+  const [loading, setLoading] = useState(true);
   const [error, seterror] = useState(null)
   const [formData, setformData] = useState({})
   const navigate = useNavigate();
@@ -23,10 +23,10 @@ function EditJob() {
         const jobData = await getSingleJob(jobId)
         setjob(jobData);
         setformData(jobData);
-        setloading(false)
       } catch (error) {
         seterror(error);
-        setloading(false)
+      } finally {
+        setLoading(false);
       }
     }
     fetchJobDetails();

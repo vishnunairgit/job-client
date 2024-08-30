@@ -11,7 +11,7 @@ function Jobview() {
     const navigate = useNavigate()
     const { jobId } = useParams();
     const [job, setjob] = useState(null)
-    const [loading, setloading] = useState(true)
+    const [loading, setLoading] = useState(true);
     const [error, seterror] = useState(null)
 
 
@@ -20,12 +20,11 @@ function Jobview() {
             try {
                 const jobData = await getSingleJob(jobId)
                 setjob(jobData)
-                setloading(false)
             } catch (error) {
                 seterror(error)
-                setloading(false)
+            }finally {
+                setLoading(false);
             }
-
         }
         fetchJobDetails();
     }, [jobId])

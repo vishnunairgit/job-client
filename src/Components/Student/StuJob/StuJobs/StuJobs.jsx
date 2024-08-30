@@ -21,11 +21,11 @@ function Alljobs() {
         const fetchJobs = async () => {
             try {
                 const jobData = await getAllJob();
-                // const jobData = await getAllJob(userId);
                 setAllJobs(jobData);
-                setLoading(false);
             } catch (error) {
                 setError(error);
+            }
+            finally {
                 setLoading(false);
             }
         };

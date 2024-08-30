@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { getJobs } from '../../../../Api/Job';
 import AllJobsCard from '../Alljobs Cards/AllJobsCard';
 import { useSelector } from 'react-redux';
-// import './alljobs.css';
 import Loading from '../../../Loading/Loading';
 import JobApplicationsChart from './JobApplicationsChart';
 
@@ -10,9 +9,9 @@ import JobApplicationsChart from './JobApplicationsChart';
 function Alljobs() {
     const userId = useSelector(state => state.user.userDetails.userId);
     const [AllJobs, setAllJobs] = useState([]);
-    const [loading, setloading] = useState(true);
+    const [loading, setLoading] = useState(true);
     const [error, seterror] = useState(null);
-    const [chartData , setchartData ] = useState({})
+    const [chartData, setchartData] = useState({})
 
 
     useEffect(() => {
@@ -20,24 +19,24 @@ function Alljobs() {
             try {
                 const jobData = await getJobs(userId);
                 setAllJobs(jobData)
-                setloading(false)
 
                 const JobTitle = jobData.map(job => job.JobTitle);
-                const jobCount = jobData.map( job =>job?.AppliedStudents || 0);
+                const jobCount = jobData.map(job => job?.AppliedStudents || 0);
 
                 setchartData({
-                    labels:JobTitle,
-                    datasets:[{
-                        label:'Number of Applications',
+                    labels: JobTitle,
+                    datasets: [{
+                        label: 'Number of Applications',
                         data: jobCount,
-                       
                     }]
                 })
 
             } catch (error) {
                 seterror(error)
-                setloading(false)
+            } finally {
+                setLoading(false);
             }
+
         }
         if (userId) {
             fetchJobs();
@@ -47,7 +46,7 @@ function Alljobs() {
 
     if (loading) {
         return (
-            <Loading/>
+            <Loading />
         );
     };
 
@@ -58,7 +57,7 @@ function Alljobs() {
     return (
         <div>
 
-<JobApplicationsChart chartData={chartData} />
+            <JobApplicationsChart chartData={chartData} />
 
             {AllJobs.length > 0 ? (
                 AllJobs.map((job) => <AllJobsCard key={job._id} job={job} />)
