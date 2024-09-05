@@ -67,9 +67,9 @@ function StuNav() {
                         <img src={userIcon} alt="User Icon" />
                     </button>
                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                        <li><a className="dropdown-item" href="#">Profile</a></li>
+                        <li><a className="dropdown-item" href="#">Profile </a></li>
                         <li><a className="dropdown-item" href="#">Applied Jobs</a></li>
-                        <li><a className="dropdown-item" href="#">Logout</a></li>
+                        <li><a className="dropdown-item" href="#">Log out</a></li>
                     </ul>
                 </div>
             </div>
